@@ -361,6 +361,7 @@ class Variable(NamedArray, AbstractArray, VariableArithmetic):
             include '_FillValue', 'scale_factor', 'add_offset' and 'dtype'.
             Well-behaved code to serialize a Variable should ignore
             unrecognized encoding items.
+        fastpath: bool = False, if True all alignment / coordinate checking is bypassed
         """
         super().__init__(
             dims=dims, data=as_compatible_data(data, fastpath=fastpath), attrs=attrs
